@@ -1,7 +1,7 @@
 @{
     ViewData["Title"] = "Home Page";
 }
-
+@model ImageResizeWebApp.Models.ImageInfoViewModel 
 <!-- Client side libs required  -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.1.1/min/dropzone.min.css" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/blueimp-gallery/2.25.2/css/blueimp-gallery.min.css" crossorigin="anonymous">
@@ -84,6 +84,17 @@
             </div>
         </div>
     </div>
+    <div style="padding-left: 600px; 
+    margin-top: -380px;"> 
+ 
+            <h2>Image Information</h2> 
+ 
+            <h3>Caption : </h3> <p style="color:green"> @Model.Description.Captions[0].text </p> 
+           
+            <h3>Possible Tags :  </h3><p style="color:green"> @String.Join(", ", Model.Description.Tags.ToArray())</p> 
+            <h3>Format :  </h3><p style="color:green"> @Model.Metadata.Format</p> 
+ 
+        </div> 
     <div class="box footer">
         <hr>
         <div class="privacy">
